@@ -1,0 +1,219 @@
+/*Estilização geral do site*/
+body{
+    font-family:'Arial';
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+/*Estilização do HEADER da página*/
+header{
+    background-color:#11041d;
+}
+/*Estilização do LOGOTIPO*/
+.logo{
+    width: 25%;  
+    margin-left: 350px;  
+}
+/*Estilização do MENU*/
+nav{
+    right: 0;
+    position: absolute;
+    top: 100px;
+    margin-right: 500px;
+    margin-top: 5px;
+}
+nav li {
+    display: inline;
+    margin: 0 0 0 15px;
+}
+nav a{
+    text-transform: uppercase;
+    color:white;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
+nav a:hover {
+    color:'red';
+    text-decoration: underline;
+}
+.logo_caixa{
+    width: 940px;
+    position: relative;
+    margin: auto;
+}
+/*Estilização do Banner*/
+.banner{
+    width: 100%;
+    height: 100%;
+}
+/*Estilização da sessão Sobre*/
+.sobre{
+    width: 200px;
+    float:left;
+    margin: 0 20px;
+}
+.titulo-sobre{
+    clear: left;
+    text-align: center;
+    font-size: 2em;
+}
+.area-sobre{
+    width: 85%;
+    text-align: justify;
+    margin: auto;
+    background-color: white;
+}
+/*Titulos - Padrão*/
+.titulo-padrao{
+    clear: left;
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+}
+/*Estilização da sessão Nosso estabelecimento*/
+.mapa p{
+    text-align: center;
+}
+
+.mapa iframe{
+    display: block;
+    margin:auto;
+}
+.mapa{
+    background: linear-gradient(#ffff, #480f7a);
+}
+/*Estilização da sessão Beneficios*/
+.beneficios{
+    /*background-color: #25093d;*/
+    background: linear-gradient(#480f7a,#1d0731 );
+}
+.itens{
+    color:#ffff;
+    line-height: 1.5;
+}
+.itens:first-child{
+    font-weight: bold;
+}
+.itens:before{
+    content: "⭐";
+}
+.titulo-beneficios{
+    clear: left;
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+    color:#ffff;
+    padding: 2%;
+}
+.conteudo_beneficios{
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.lista_beneficios{
+    width: 20%;
+    display:inline-block;
+    vertical-align: top;
+    list-style:none;
+    padding-left: 30%;
+    margin-top: 30px;
+}
+.img_beneficios{
+    width: 7%;
+    box-shadow: 10px 10px 5px 0px black;
+    opacity: 1;
+    transition: 400ms;
+}
+.img_beneficios:hover{
+    opacity: 0.7;
+}
+/*Estilização do video*/
+.video{
+    text-align: center;
+}
+.imgfooter{
+    width:15%;
+    text-align: center;
+}
+.footer{
+    background: linear-gradient(#1d0731, black);
+    text-align: center;
+    padding: 5%;
+    margin: 0;
+}
+.copyright{
+    color:white;
+}
+.titulo-precos{
+    color:#1d0731;
+}
+.container{
+    display: flex;
+    justify-content: space-between; 
+    margin: 10px;
+}
+.esquerda, .centro, .direita {
+    flex: 1;
+    background-color: white; 
+    text-align: center;
+    padding: 20px; 
+    margin: 30px;
+    border: 4px solid #7a10a0;   
+    box-sizing: border-box;
+    border-radius: 10px;
+    transition: border-color 0.3s; 
+}
+.grande{
+    width:35%;
+}
+.tatuagens-paragrafo{
+    text-align: center;
+}
+.esquerda:hover{
+    border-color: rgb(0, 0, 0); 
+    transform: scale(1.05);
+}
+.centro:hover{
+    border-color: rgb(0, 0, 0); 
+    transform: scale(1.05);
+}
+.direita:hover{
+    border-color: rgb(0, 0, 0); 
+    transform: scale(1.05);
+}
+.form{
+    background-color: #ffffff;
+    margin: 0;
+    text-align: center;
+}
+.recuo{
+    background-color: #ffffff;
+    margin: 0;
+}
+.caixa-input {
+    display: inline-block;
+    width: 20%; /* Define a largura dos campos para preencher a largura da div pai */
+    margin: 10px 0; /* Adiciona margem superior e inferior para separar os campos */
+    padding: 10px; /* Adiciona espaçamento interno para melhor aparência */
+    border-radius: 10px; /* Arredonda as bordas dos campos */
+    border: 1px solid #ccc;
+}
+.botaoform {
+    width: 20%;
+    height: 80px;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    border: none; /* Removendo a borda do botão para uma aparência mais limpa */
+    background-color: #7a10a0; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    cursor: pointer; /* Adicionando um cursor de mão quando o mouse passar sobre o botão */
+    font-size: 16px; /* Tamanho da fonte do botão */
+}
+.msg2{
+    text-align: center;
+}
+.resposta{
+    text-align:center;
+}
