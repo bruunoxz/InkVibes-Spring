@@ -1,219 +1,354 @@
 /*Estilização geral do site*/
 body{
-    font-family:'Arial';
+    font-family: "Arial";
     margin: 0;
     padding: 0;
     border: 0;
 }
+
+/*Estilização da fonte do H1*/
+@font-face {
+    font-family: 'Moonbright';
+    src: url('fonts/MoonbrightDemo-1GGn2.ttf') format('truetype');
+}
+
+#titulo {
+    font-family: 'Moonbright';
+    font-size: 55px;
+    text-align: center;
+    margin: 0;
+    padding: 2%;
+}
+
 /*Estilização do HEADER da página*/
 header{
-    background-color:#11041d;
+    color: white;
+    background: #330852;
+    
 }
-/*Estilização do LOGOTIPO*/
+
+/*Estilização do logotipo*/
 .logo{
-    width: 25%;  
-    margin-left: 350px;  
+    width: 35%;
 }
-/*Estilização do MENU*/
+
+/*Estilização do NAV - Menu*/
 nav{
     right: 0;
     position: absolute;
     top: 100px;
-    margin-right: 500px;
-    margin-top: 5px;
+
 }
-nav li {
+
+nav li{
     display: inline;
-    margin: 0 0 0 15px;
+    margin: 0 0 0 10px;
+
 }
+
 nav a{
-    text-transform: uppercase;
-    color:white;
+    text-transform: uppercase; 
+    color: white;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20px;
     text-decoration: none;
+
 }
-nav a:hover {
-    color:'red';
+
+nav a:hover{
+    color: #888788;
     text-decoration: underline;
 }
+
 .logo_caixa{
     width: 940px;
     position: relative;
     margin: auto;
 }
-/*Estilização do Banner*/
+
+/*Estilização do banner*/
 .banner{
     width: 100%;
     height: 100%;
-}
-/*Estilização da sessão Sobre*/
-.sobre{
-    width: 200px;
-    float:left;
-    margin: 0 20px;
-}
-.titulo-sobre{
-    clear: left;
-    text-align: center;
-    font-size: 2em;
-}
-.area-sobre{
-    width: 85%;
-    text-align: justify;
-    margin: auto;
-    background-color: white;
-}
-/*Titulos - Padrão*/
-.titulo-padrao{
-    clear: left;
-    text-align: center;
-    font-size: 40px;
-    margin: 0;
-}
-/*Estilização da sessão Nosso estabelecimento*/
-.mapa p{
-    text-align: center;
+    margin: 0 0 0 0;
 }
 
-.mapa iframe{
-    display: block;
-    margin:auto;
+
+/*Estilização da section sobre a Ink Vibes*/
+
+.tatuador{
+    width: 30%;
+    float: left;
 }
-.mapa{
-    background: linear-gradient(#ffff, #480f7a);
-}
-/*Estilização da sessão Beneficios*/
-.beneficios{
-    /*background-color: #25093d;*/
-    background: linear-gradient(#480f7a,#1d0731 );
-}
-.itens{
-    color:#ffff;
-    line-height: 1.5;
-}
-.itens:first-child{
-    font-weight: bold;
-}
-.itens:before{
-    content: "⭐";
-}
-.titulo-beneficios{
+
+.t-ink{
     clear: left;
-    text-align: center;
-    font-size: 40px;
-    margin: 0;
-    color:#ffff;
-    padding: 2%;
 }
-.conteudo_beneficios{
+
+.area-ink{
+    width: 940px;
+    text-align: justify;
+    margin: auto;
+    background-color: #FFFFFE;
+}
+
+p{
+    text-indent: 20px;
+}
+
+ /*Estilização da section Nosso estabelecimento (Mapa)*/
+
+.mapa{
+    text-align: center;
+    background: linear-gradient(#FFFFFE, #8852af);
+}
+
+/*Estilização da section Benefícios*/
+
+.beneficios{
+    background: linear-gradient(#8852af, #330852);
+}
+
+.cont-beneficios{
     width: 100%;
     margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 15px;
 }
-.lista_beneficios{
-    width: 20%;
-    display:inline-block;
+
+.lista-beneficios{
+    width: 30%;
+    display: inline-block;
     vertical-align: top;
-    list-style:none;
-    padding-left: 30%;
-    margin-top: 30px;
+    list-style: none;
+    padding-left: 28%;
 }
+
 .img_beneficios{
-    width: 7%;
+    width: 160px;
     box-shadow: 10px 10px 5px 0px black;
     opacity: 1;
     transition: 400ms;
 }
+
 .img_beneficios:hover{
     opacity: 0.7;
 }
-/*Estilização do video*/
+
+.itens:before{
+    content: "⭐ ";
+}
+
+.itens:first-child{
+    font-weight: bold;
+}
+
+.itens{
+    line-height: 1.5;
+    color: #FFFFFF;
+}
+
 .video{
+    background: linear-gradient(#330852, #26063d);
     text-align: center;
+    margin: 0px;
+    padding: 3%;
 }
-.imgfooter{
-    width:15%;
+
+/*Estilização logo Footer*/
+
+footer{
     text-align: center;
+    background: url('assets/qPreto.png');
+    padding: 1%;
 }
-.footer{
-    background: linear-gradient(#1d0731, black);
-    text-align: center;
-    padding: 5%;
-    margin: 0;
-}
+
 .copyright{
-    color:white;
+    color: white;
+    font-size: 8px;
 }
-.titulo-precos{
-    color:#1d0731;
+
+.logo_footer{
+    width: 150px;
 }
-.container{
-    display: flex;
-    justify-content: space-between; 
-    margin: 10px;
+
+/*Estilização dos componentes da section da página Tatuadores*/
+
+.pistola{
+    width: 40px;
 }
-.esquerda, .centro, .direita {
-    flex: 1;
-    background-color: white; 
-    text-align: center;
-    padding: 20px; 
-    margin: 30px;
-    border: 4px solid #7a10a0;   
-    box-sizing: border-box;
+
+.t_tatuador{
+    font-family: 'Moonbright';
+    font-size: 50px;
+    text-align: left;
+    margin: 0;
+    padding: 2%;
+}
+
+.div_tattoo{
+    width: 90%;
+    border-width: 2px;
+    border-style: solid; 
+    border-color:  #330852;
     border-radius: 10px;
-    transition: border-color 0.3s; 
-}
-.grande{
-    width:35%;
-}
-.tatuagens-paragrafo{
+    padding: px;
+    margin: 2.5%;
     text-align: center;
 }
-.esquerda:hover{
-    border-color: rgb(0, 0, 0); 
-    transform: scale(1.05);
-}
-.centro:hover{
-    border-color: rgb(0, 0, 0); 
-    transform: scale(1.05);
-}
-.direita:hover{
-    border-color: rgb(0, 0, 0); 
-    transform: scale(1.05);
-}
-.form{
-    background-color: #ffffff;
-    margin: 0;
+
+#titulo-h3{
+    font-family: 'Moonbright';
+    font-size: 30px;
     text-align: center;
-}
-.recuo{
-    background-color: #ffffff;
     margin: 0;
+    padding: 2%;
 }
-.caixa-input {
+.estilo_tattoo{
+    width: 200px;
     display: inline-block;
-    width: 20%; /* Define a largura dos campos para preencher a largura da div pai */
-    margin: 10px 0; /* Adiciona margem superior e inferior para separar os campos */
-    padding: 10px; /* Adiciona espaçamento interno para melhor aparência */
-    border-radius: 10px; /* Arredonda as bordas dos campos */
-    border: 1px solid #ccc;
-}
-.botaoform {
-    width: 20%;
-    height: 80px;
-    margin: 10px 0;
-    padding: 10px;
+    vertical-align: top;
+    list-style: none;
     border-radius: 10px;
-    border: none; /* Removendo a borda do botão para uma aparência mais limpa */
-    background-color: #7a10a0; /* Cor de fundo do botão */
-    color: #fff; /* Cor do texto do botão */
-    cursor: pointer; /* Adicionando um cursor de mão quando o mouse passar sobre o botão */
-    font-size: 16px; /* Tamanho da fonte do botão */
-}
-.msg2{
     text-align: center;
 }
-.resposta{
-    text-align:center;
+
+.style_tattoo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.div_tattoo:hover{
+    transform: scale(1.1);
+    border-color: #8852af;
+}
+
+.info{
+    text-align: center;
+}
+
+#obs{
+    font-size: 10px;
+    margin: 35px;
+}
+
+.prt{
+    font-size: 15px;
+}
+
+.prt1 {
+    font-size: 20px;
+    margin: 2px;
+}
+
+
+/*Estilização Login*/
+
+.mainLog{
+    background-color: #8852af;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.areaDados{
+    background-color: #b296c7;
+    width: 40%;
+    max-height: 60%;
+    display: inline-block;
+    vertical-align: top;
+    list-style: none;
+    border-radius: 10px;
+    text-align: left;
+    margin: 35px;
+}
+
+.dadosLog{
+    border-radius: 5px;
+    width: auto;
+    right: 20%;
+}
+
+.bCad{
+    position: fixed;
+    background-color: #f50808;
+    color:#ffffff;
+    cursor: pointer;
+    top: 20px;
+    right: 20px;
+}
+
+/*Estilização Contato*/
+
+form{
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+form label, form legend{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.input-padrao{
+    display: block;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    width: 98%;
+    padding: 1%;
+    min-width: 400px;
+}
+
+.enviar{
+    text-align: center;
+    font-size: 100%;
+    background: #8852af;
+    margin-top: 5px;
+    width: 30%;
+    border-radius: 5px;
+    font-weight: bolder;
+    color: white;
+    padding: 2%;
+}
+
+.enviar:hover{
+    background: #a979ca;
+    scale: 1.05;
+}
+
+fieldset{
+    border-radius: 5px;
+}
+
+/*Estilização tela de Login*/
+
+
+.entrarCadLog{
+    text-align: center;
+    font-size: 100%;
+    background: #8852af;
+    margin-top: 5px;
+    margin-bottom: 5%;
+    width: 10%;
+    border-radius: 5px;
+    font-weight: bolder;
+    color: white;
+    padding: 1%;
+}
+
+.entrarCadLog:hover{
+    background: #a979ca;
+    scale: 1.05;
+}
+
+.espaco{
+    margin-bottom: 10%;
 }

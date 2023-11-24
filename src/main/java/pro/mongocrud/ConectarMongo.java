@@ -8,10 +8,16 @@ import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
 import org.bson.Document;
 
+ 
+
 public class ConectarMongo {
 
+ 
+
     String database = "inkvibes";
-    String collection = "usuarios";
+    String collection = "inkvibes";
+
+ 
 
     public void getValues() {
         System.out.println("getValues");
@@ -30,14 +36,14 @@ public class ConectarMongo {
 
  
 
-    public String selectValues(String email) {
+    public String selectValues(int x) {
         String y = "";
         System.out.println("Select Values");
         String uri = "mongodb://localhost";
         MongoClient mongo = MongoClients.create(uri);
         MongoDatabase db = mongo.getDatabase(database);
         MongoCollection<Document> docs = db.getCollection(collection);
-        Document doc = docs.find(Filters.eq("email", email)).first();
+        Document doc = docs.find(Filters.eq("_id", x)).first();
         y = doc.getString("nome");
         for (Document doc1 : docs.find()) {
             System.out.println("item2: " + doc1);
@@ -48,7 +54,7 @@ public class ConectarMongo {
 
  
 
-    public void insertValues(String Nome, int telefone, String email,int cpf, String end,String senha) {
+    public void insertValues(String Nome, String Email, String Telefone, String Endereco, String Senha) {
         System.out.println("insertValues");
         String uri = "mongodb://localhost";
         MongoClient mongo = MongoClients.create(uri);
@@ -56,25 +62,24 @@ public class ConectarMongo {
         MongoCollection<Document> docs = db.getCollection(collection);
         Document docBuilder = new Document();
         docBuilder.append("nome", Nome);
-        docBuilder.append("telefone", telefone);
-        docBuilder.append("email", email);
-        docBuilder.append("cpf", cpf);
-        docBuilder.append("endereco", end);
-        docBuilder.append("senha", senha);
-        docs.insertOne(docBuilder);  
+        docBuilder.append("email", Email);
+        docBuilder.append("Telefone", Telefone);
+        docBuilder.append("Endereco", Endereco);
+        docBuilder.append("Senha", Senha);
+        docs.insertOne(docBuilder);//insere no mongo o conteúdo de doc      
         System.out.println("insertValues ok");
     }
 
  
 
-    public boolean findValuesemail(String email) {
+    public boolean findValuesid(int id) {
         boolean y =false;
         System.out.println("findValues");
         String uri = "mongodb://localhost";
         MongoClient mongo = MongoClients.create(uri);
         MongoDatabase db = mongo.getDatabase(database);
         MongoCollection<Document> docs = db.getCollection(collection);
-        for (Document doc : docs.find(Filters.eq("email", email))) {
+        for (Document doc : docs.find(Filters.eq("_id", id))) {
             System.out.println("achou pelo id: " + doc);
             y=true;
         }
@@ -85,7 +90,7 @@ public class ConectarMongo {
  
 
     public String findValuesName(String nome) {
-        String nome2 = "n�o achou";
+        String nome2 = "não achou";
         System.out.println("findName");
         String uri = "mongodb://localhost";
         MongoClient mongo = MongoClients.create(uri);

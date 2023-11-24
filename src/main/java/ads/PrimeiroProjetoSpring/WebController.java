@@ -10,28 +10,56 @@ import pro.mongocrud.ConectarMongo;
 
 @Controller
 public class WebController {
+    @RequestMapping("/pag1")
+    public String DigaOla(Model modelo){
+        System.out.println("Dizendo Olárrr!");
+        modelo.addAttribute("mensagem", "Bem vind@ a essa loucura!");
+        return "pag1"; 
+    }
     @RequestMapping("/form")
     public String DigaOla2(Model modelo){
         System.out.println("Estou no form");
-        modelo.addAttribute("mensagem2", "Cadastro");
+        modelo.addAttribute("mensagem2", "Formulário");
         return "form"; 
     }
     
-    @RequestMapping(value="/respostaForm", method=RequestMethod.POST)
-    public String DigaOla3(Model modelo, String fname, int tel, String email, int cpf, String end, String senha){
-        System.out.println("Agora estou na Resposta Form");
-        modelo.addAttribute("mensagem3", "Resposta do Formulário:\n" + fname + " seja bem vindo\n" + "seu email é: " + email);
-        //Conexão com o mongo
-        ConectarMongo con = new ConectarMongo();
-        con.insertValues(fname, tel, email, cpf, end, senha);
-        con.getValues();
-        //Conexão com o MySQL
+    @RequestMapping(value="/login", method= RequestMethod.POST)
+    public String Cadastrar(Model modelo, String nomeCad, String email, String telefone, String endereco, String senha){
+        System.out.println("Agora estou no Resposta Form");
+        
+        modelo.addAttribute("script", "<script>alert('Cadastrado com sucesso, agora faça o login: "+ nomeCad+"'); window.location.href='/login.html';</script>");
+        //modelo.addAttribute("mensagem3", "Cadastrado com sucesso, agora faça o login: "+ nomeCad);
+        
+        //conexão com MySQL - insere dados
         conectar obj = new conectar();
         Connection conexao = obj.connectionMySql();
-        obj.dataBaseInsert(fname, tel, email, cpf, end, senha);
+        obj.dataBaseInsert(nomeCad, email, telefone, endereco, senha);
         obj.consulta(conexao);
         obj.closeConnectionMySql(conexao);
-        return "respostaForm";
+        
+        return "login";
+    }
+    
+    
+    
+    @RequestMapping(value="/indexlogado", method = RequestMethod.POST)
+    public String Logar(Model modelo, String email, String senhaLog){
+        System.out.println("Logando");
+        modelo.addAttribute("mensagem4", "Logado com sucesso: "+ email);
+        conectar obj = new conectar();
+        Connection conexao = obj.connectionMySql();
+        
+        if(obj.autenticarUsuario(email, senhaLog)){
+            modelo.addAttribute("mensagem4", "Logado com sucesso: "+ email);
+            obj.consulta(conexao);
+            obj.closeConnectionMySql(conexao);
+            return "indexlogado";
+        }else{
+            modelo.addAttribute("mensagem4", "Login inválido");
+            obj.consulta(conexao);
+            obj.closeConnectionMySql(conexao);
+            return "login";
+        }
     }
 }
 

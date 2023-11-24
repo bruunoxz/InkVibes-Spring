@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="assets/logoIV.ico" type="image/x-icon">
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <div class="logo_caixa">
+            <img class="logo" src="assets/InkVibes.png" title="Logo Ink Vibes" width="300">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tatuadores.html">Tatuagem</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!--Main - Conteúdo do corpo da página-->
+    <main>
+        <h1 class="t_tatuador"><img src="assets/cont.png" class="pistola"> Cadastro</h1>
+        
+        <form class="formCadastro"  action="login" method='post'>
+            <fieldset class="fieldCadLog">
+                <legend>Cadastro</legend>
+                
+                <label for='nomeCad'>Nome:</label>
+                <input type="text" name="nomeCad" id="nomeCad" class="input-padrao">
+                
+                <label for='email'>E-mail:</label>
+                <input type="email" name="email" id="email" class="input-padrao">
+                
+                <label for='telefone'>Telefone:</label>
+                <input type="text" name="telefone" id="telefone" class="input-padrao">
+                
+                <label for='endereco'>Endereço:</label>
+                <input type="text" name="endereco" id="endereco" class="input-padrao">
+                
+                <label for='senha'>Senha:</label>
+                <input type="password" name="senha" id="senha" class="input-padrao">
+                
+            </fieldset>
+
+            <input type="submit" class="entrarCadLog" value="Cadastrar"> 
+        </form>
+    </main>
+    
+    <footer>
+        <img src="assets/InkVibesPNG.png" alt="Ink Vibes" class="logo_footer">
+        <p class="copyright">&copy; Copyright - Todos os direitos reservados a Ink Vibes</p>
+    </footer>
+
+    <!-- Script block for alert and redirection -->
+    <div th:utext="${script}"></div>
+</body>
+</html>
